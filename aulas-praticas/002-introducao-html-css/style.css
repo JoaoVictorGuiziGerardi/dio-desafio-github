@@ -1,10 +1,23 @@
 body{
     background-color:rgba(255, 248, 220, 0.75);
     font-family: Arial, Helvetica, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 5px;
 }
 
 #title, .subtitle, .post_title{
     color:rgba(0, 0, 139, 0.8);
+}
+
+#title {
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+a{
+    text-decoration: underline;
+    color: gray;
 }
 
 .photo{
@@ -20,11 +33,13 @@ body{
 }
 
 .post_content{
+    text-align: justify;
     margin: 0;
     margin-bottom: 15px;
 }
 
 .post_image{
+    width: 50%;
     margin-bottom: 15px;
     border-radius: 5px;
 }
@@ -35,4 +50,8 @@ body{
     border: 2px solid gray;
     margin-bottom: 15px;
     border-radius: 10px;
+}
+
+.contacts_list li a{
+    text-decoration: none;
 }
