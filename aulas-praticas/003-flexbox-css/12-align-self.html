@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Align Self</title>
+
+    <style>
+        .flex-container{
+            display: flex;
+            border: 2px solid black;
+            margin-bottom: 10px;
+            max-width: 350px;
+        }
+        
+        .align-container{
+            align-items: center;
+            /* -> se o align self for auto puxa esse*/
+        }
+
+        .item{
+            background-color: rgba(0, 0, 255, 0.5);
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .center{
+            align-self: center;
+        }
+
+        .start{
+            align-self: flex-start;
+        }
+
+        .end{
+            align-self: flex-end;
+        }
+
+        .baseline{
+            align-self: baseline;
+        }
+
+        .stretch{
+            align-self: stretch;
+        }
+
+        .auto{
+            align-self: auto;
+        }
+
+        .direction{
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>row</h1>
+    <section class="flex-container align-container">
+        <div class="item auto">AAA</div>
+        <div class="item auto">123</div>
+        <div class="item auto">Lorem Ipsum bla blablabla blab blab blalba</div>
+        <div class="item auto">ITEM 4</div>
+    </section>
+
+    <section class="flex-container">
+        <div class="item center">AAA</div>
+        <div class="item start">123</div>
+        <div class="item stretch">Lorem Ipsum bla blablabla blab blab blalba</div>
+        <div class="item end">ITEM 4</div>
+    </section>
+
+    <section class="flex-container">
+        <div class="item center">AAA</div>
+        <div class="item start">AAAAAAAAAA</div>
+        <div class="item end">AAAAAAAAAAAAAAAAA</div>
+        <div class="item stretch">Lorem Ipsum bla blablabla blab blab blalba</div>
+    </section>
+
+    <h1>column</h1>
+    <section class="flex-container align-container direction">
+        <div class="item auto">AAA</div>
+        <div class="item auto">123</div>
+        <div class="item auto">Lorem Ipsum bla blablabla blab blab blalba</div>
+        <div class="item auto">ITEM 4</div>
+    </section>
+
+    <section class="flex-container direction">
+        <div class="item center">AAA</div>
+        <div class="item start">123</div>
+        <div class="item stretch">Lorem Ipsum bla blablabla blab blab blalba</div>
+        <div class="item end">ITEM 4</div>
+    </section>
+
+    <section class="flex-container direction">
+        <div class="item center">AAA</div>
+        <div class="item start">AAAAAAAAAA</div>
+        <div class="item end">AAAAAAAAAAAAAAAAAA</div>
+        <div class="item stretch">Lorem Ipsum bla blablabla blab blab blalba</div>
+    </section>
+</body>
+</html>
