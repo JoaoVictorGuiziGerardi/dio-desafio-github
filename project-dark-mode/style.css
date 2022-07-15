@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
+.dark-mode button{
+    background-color: white;
+    color: black;
+}
+
+.box{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button{
+    border-radius: 15px;
+    height: 5vh;
+    background-color: black;
+    color: white;
+}
+
+button:hover{
+    background-color: rgba(128, 128, 128, 0.6);
+    border: 1px solid transparent;
+}
+
+footer{
+    font-size: 12px;
+    bottom: 0;
+    margin-bottom: 1vh;
+    position: fixed;
+    width: 90%;
+    text-align: center;
+}
