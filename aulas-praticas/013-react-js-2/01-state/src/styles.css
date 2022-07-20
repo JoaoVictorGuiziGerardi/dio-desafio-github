@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.teste{
+    color:rgba(0, 0, 255, 0.65);
+}
+
+form {
+    margin: 20px;
+}
