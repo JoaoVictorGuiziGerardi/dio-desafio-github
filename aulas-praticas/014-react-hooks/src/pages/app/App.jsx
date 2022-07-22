@@ -1,7 +1,9 @@
+import { useState } from "react";
 import React from "react";
 import styled from 'styled-components';
 import narutoImg from '../../images/naruto.png';
 import { Quotes } from "../../components/quotes";
+import { getQuote } from '../../services/quotesService';
 
 const Container = styled.div`
     height: 100vh;
@@ -17,9 +19,20 @@ const NarutoImg = styled.img`
 `;
 
 const App = () => {
+    const [ quoteState, setQuoteState ] = useState({
+        anime: 'Naruto',
+        quote: 'Dattebayo!',
+        character: 'Naruto'
+    });
+
+    const onUpdate = async () => {
+        const quote = await getQuote();
+        setQuoteState(quote);
+    };
+
     return(
         <Container>
-                <Quotes quote={"oioioio"} speaker={"joao"}/>
+                <Quotes quote={quoteState.quote} speaker={quoteState.character} onUpdate={onUpdate}/>
                 <NarutoImg src={narutoImg} alt="Naruto com uma Kunai" />          
         </Container>
     );

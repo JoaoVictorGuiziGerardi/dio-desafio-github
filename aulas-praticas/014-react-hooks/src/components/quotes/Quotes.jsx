@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
+import { Button } from '../button';
 
 const Quote = styled.p`
     font-size: 2em;
@@ -10,6 +11,7 @@ const Quote = styled.p`
 const Speaker = styled(Quote)`
     text-align: right;
     margin-bottom: 50px;
+    font-size: 1.5em;
 `;
 
 const Wrapper = styled.div`
@@ -21,19 +23,19 @@ const Wrapper = styled.div`
 
 
 
-export const Quotes = ({ quote, speaker }) => {
+export const Quotes = ({ quote, speaker, onUpdate = () => {} }) => {
     
-
     return (
         <Wrapper>
             <Quote>{quote}</Quote>
-            <Speaker>- {speaker}</Speaker>            
-            <button>Quote no Jutsu</button>
+            <Speaker>- {speaker}</Speaker>
+            <Button onClick={onUpdate}>Quote no Jutsu</Button>
         </Wrapper>
     )
 };
 
 Quotes.propTypes = {
     quote: string,
-    speaker: string
+    speaker: string,
+    onUpdate: func
 };
