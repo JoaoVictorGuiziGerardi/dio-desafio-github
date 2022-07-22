@@ -4,14 +4,15 @@ import { string, func } from 'prop-types';
 import { Button } from '../button';
 
 const Quote = styled.p`
-    font-size: 2em;
+    font-size: clamp(14px, 2vw, 24px);
     margin: 0;
 `;
 
 const Speaker = styled(Quote)`
     text-align: right;
     margin-bottom: 50px;
-    font-size: 1.5em;
+    font-size: clamp(10px, 1.5vw, 20px);
+    margin-top: 10px;
 `;
 
 const Wrapper = styled.div`

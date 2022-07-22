@@ -20,6 +20,9 @@ module.exports = {
             }, {
                 test: /\.(jpeg|png|gif|svg)$/,
                 loader: 'file-loader'
+            }, {
+                test: /\.(mp3)$/,
+                loader: 'file-loader'
             }
         ]
     },

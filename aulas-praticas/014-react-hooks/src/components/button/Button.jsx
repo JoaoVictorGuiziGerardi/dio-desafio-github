@@ -7,7 +7,7 @@ const ButtonEst = styled.button`
     color: #fff;
     border: none;
     border-radius: 0;
-    font-size: 1.5em;
+    font-size: clamp(10px, 1.5vw, 20px);
     padding: 10px 20px;
     font-family: 'New Tegomin', serif;
     cursor: pointer;

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import styled from 'styled-components';
 import narutoImg from '../../images/naruto.png';
 import { Quotes } from "../../components/quotes";
 import { getQuote } from '../../services/quotesService';
+import jutsuSound from '../../sounds/jutsu.mp3';
+
+const audio = new Audio(jutsuSound);
 
 const Container = styled.div`
     height: 100vh;
@@ -19,16 +22,29 @@ const NarutoImg = styled.img`
 `;
 
 const App = () => {
+    let isMounted = useRef(true);
+
     const [ quoteState, setQuoteState ] = useState({
-        anime: 'Naruto',
-        quote: 'Dattebayo!',
-        character: 'Naruto'
+        quote: 'loading quote...',
+        character: 'loading character...'
     });
 
     const onUpdate = async () => {
         const quote = await getQuote();
-        setQuoteState(quote);
+
+        if (isMounted.current) {
+            audio.play();
+            setQuoteState(quote);
+        }
     };
+
+    useEffect(() => {
+        onUpdate();
+
+        return () => {
+            isMounted.current = false;
+        };
+    }, []);
 
     return(
         <Container>
