@@ -1,3 +1,122 @@
+// Aula Smart Components
+import React from "react";
+import PhotosGallery from "./aula-smart-components/gallery/PhotosGallery";
+import Button from './aula-dumb-components/button/Button';
+function App () {
+
+    const photos = [
+        'http://placeimg.com/140/60/people',
+        'http://placeimg.com/140/60/animals',
+        'http://placeimg.com/140/60/tech',
+        'http://placeimg.com/140/60/nature'
+    ]
+
+    return(
+        <>
+            <h1>Galeria de Fotos</h1>
+            <PhotosGallery 
+                photos={photos}
+            />
+        </>
+    )
+}
+
+/* Aula Dumb Components
+import React, { useState } from "react";
+import Button from "./aula-dumb-components/button/Button";
+import Calc from "./aula-dumb-components/calc/Calc";
+
+function App () {
+
+    const [value, setValue] = useState(0)
+    const [min, setMin] = useState(0)
+    const [max, setMax] = useState(30)
+
+    const handleClick = () => {
+        setMin(10);
+    }
+
+    const handleCalc = ({target}) => {
+        const value = Number(target.value);
+        setValue(min+max+value);
+    }
+
+    return(
+        <>
+        <div>
+           <Button onClick={handleClick}>
+                Adicionar no carrinho
+            </Button> 
+        </div>
+            <br />
+            <div>
+                <h1>Valor calculado: {value}</h1>
+                <Calc 
+                    min={min}
+                    max={max}
+                    onChange={handleCalc}
+                />
+            </div>
+        </>
+    )
+}
+*/
+
+/* Aula Refs
+import React, { useRef, useEffect, useState } from "react";
+
+function App () {
+    const inputRef = useRef();
+    const count = useRef(1);
+    const [value, setValue] = useState(false);
+
+    const handleClick = () => {
+        inputRef.current.focus();
+        console.log('inputRef.current', inputRef.current);
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('passou aqui')
+            count.current = 300
+            setValue(true);
+        }, 3000)
+    })
+
+    return(
+        <>
+            <h1>Valor de count: {count.current}</h1>
+            Foco: <input ref={inputRef} />
+            <br />
+            <button onClick={handleClick}>Focar</button>
+        </>
+    )
+}
+*/
+
+/* Aula Type Checking
+import React from "react";
+import PetShop from "./aula-type-checking/PetShop";
+
+function App () {
+    const handleClick = () => {
+        console.log('Iniciando o banho...')
+    }
+
+    return(
+        <div>
+            <PetShop
+                dogs={2}
+                customerName={'João Victor'}
+                onClick={handleClick}
+                status={'Completed'}
+            />
+        </div>
+    )
+}
+*/
+
+/* Aula de Render Props
 import React, { Component } from "react";
 import Counter from './aula-render-props/Counter'
 
@@ -29,6 +148,7 @@ class App extends Component {
         )
     }
 }
+*/
 
 /* Aula Error Boundary
 import React, { Fragment } from "react";
