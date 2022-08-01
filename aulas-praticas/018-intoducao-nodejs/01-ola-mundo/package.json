@@ -1,0 +1,11 @@
+{
+  "name": "01-ola-mundo",
+  "version": "1.0.0",
+  "description": "\"Projeto de introducao\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "author": "JoaoVictorGuiziGerardi",
+  "license": "ISC"
+}
