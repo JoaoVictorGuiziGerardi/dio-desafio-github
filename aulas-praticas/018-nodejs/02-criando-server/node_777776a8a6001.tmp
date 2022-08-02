@@ -1,0 +1,24 @@
+const os = require('os');
+
+setInterval(() => {
+    const { arch, platform, totalmem, freemem } = os;
+
+    // Total de memória do sistema em bytes -> totalmem()
+    // Total de memória livre do sistema em bytes -> freemem()
+
+    // Converter para MB
+    const tRam = totalmem() / 1024 / 1024;
+    const fRam = freemem() / 1024 / 1024;
+
+    const stats = {
+        OS: platform(),
+        Arch: arch(),
+        TotalRAM:`${parseInt(tRam)} MB`,
+        freeRAM: `${parseInt(fRam)} MB`
+    };
+
+    console.clear();
+    console.log(stats);
+    
+}, 1000);
+
